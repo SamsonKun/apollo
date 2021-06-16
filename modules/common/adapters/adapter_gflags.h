@@ -37,6 +37,7 @@ DECLARE_string(control_local_view_topic);
 DECLARE_string(control_core_command_topic);
 DECLARE_string(pointcloud_topic);
 DECLARE_string(pointcloud_16_topic);
+DECLARE_string(pointcloud_16_raw_topic);
 DECLARE_string(pointcloud_16_front_up_topic);
 DECLARE_string(pointcloud_64_topic);
 DECLARE_string(pointcloud_128_topic);
@@ -83,6 +84,9 @@ DECLARE_string(image_short_topic);
 DECLARE_string(image_long_topic);
 DECLARE_string(camera_image_long_topic);
 DECLARE_string(camera_image_short_topic);
+DECLARE_string(camera_front_6mm_topic);
+DECLARE_string(camera_front_6mm_2_topic);
+DECLARE_string(camera_front_12mm_topic);
 DECLARE_string(camera_front_6mm_compressed_topic);
 DECLARE_string(camera_front_12mm_compressed_topic);
 DECLARE_string(camera_left_fisheye_compressed_topic);
@@ -133,3 +137,7 @@ DECLARE_string(recorder_status_topic);
 DECLARE_string(latency_recording_topic);
 // Latency reporting topic
 DECLARE_string(latency_reporting_topic);
+
+// It determins which lidar model(16 or 128) to load, if not to set,
+// the model will be loaded by the sensor name. Mainly for D-kit.
+DECLARE_string(lidar_model_version);

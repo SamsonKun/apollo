@@ -25,14 +25,19 @@ CURR_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 apt_get_update_and_install \
     git \
     vim \
-    patchelf \
     silversearcher-ag
-
-# Note(storypku):
-# patchelf was required for release build.
 
 # More:
 # lrzsz
+
+
+# Note(storypku):
+# patchelf was required for release build. We choose to build patchelf
+# from source, as the apt-provided version 0.9-1 will create holes in
+# binaries which causes size bloating. Will revisit this once the
+# apt-provided patchelf get updated.
+#
+bash ${CURR_DIR}/install_patchelf.sh
 
 # Clean up cache to reduce layer size.
 apt-get clean && \
